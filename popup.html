@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Backtest Analyzer</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Backtest Analyzer</h1>
+            <p class="subtitle">TradingView Strategy Reporter</p>
+        </header>
+
+        <main id="main-content">
+            <div class="action-section">
+                <button id="start-btn" class="primary-btn">Start Analysis</button>
+                <p class="info-text">Open the "List of Trades" tab in TradingView before starting.</p>
+            </div>
+
+            <div id="results-section" class="hidden">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="label">Total Trades</span>
+                        <span id="total-trades" class="value">0</span>
+                    </div>
+                    <div class="stat-card highlight-pos">
+                        <span class="label">Positive Trades</span>
+                        <span id="pos-trades" class="value">0</span>
+                        <span id="pos-ratio" class="sub-value">0%</span>
+                    </div>
+                    <div class="stat-card highlight-neg">
+                        <span class="label">Negative Trades</span>
+                        <span id="neg-trades" class="value">0</span>
+                        <span id="neg-ratio" class="sub-value">0%</span>
+                    </div>
+                </div>
+
+                <div class="pnl-summary">
+                    <div class="pnl-item">
+                        <span class="label">Total Profit</span>
+                        <span id="total-profit" class="value positive">0.00</span>
+                    </div>
+                    <div class="pnl-item">
+                        <span class="label">Total Loss</span>
+                        <span id="total-loss" class="value negative">0.00</span>
+                    </div>
+                    <div class="pnl-item total">
+                        <span class="label">Net Profit</span>
+                        <span id="net-profit" class="value">0.00</span>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Equity Curve</h3>
+                    <canvas id="pnlChart"></canvas>
+                </div>
+                
+                <button id="download-btn" class="primary-btn">Download Full Report (CSV)</button>
+            </div>
+
+            <div id="loading-section" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing trades... <br><small>Please wait while we scroll the table.</small></p>
+            </div>
+        </main>
+
+        <button id="close-btn" class="secondary-btn">Close</button>
+    </div>
+
+    <script src="chart.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

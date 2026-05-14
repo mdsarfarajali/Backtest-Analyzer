@@ -1,0 +1,20 @@
+# IDE and Tooling
+.gemini/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Build and Temp
+node_modules/
+dist/
+build/
+*.log
+
+# Extension specific
+*.crx
+*.zip

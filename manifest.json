@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "TradingView Backtest Analyzer",
+  "version": "1.0",
+  "description": "Analyzes TradingView backtest reports and generates a detailed P&L report.",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*.tradingview.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.tradingview.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
